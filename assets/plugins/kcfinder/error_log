@@ -1,0 +1,1 @@
+[15-Sep-2022 16:00:50 UTC] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/pesant19/public_html/assets/plugins/kcfinder/core/class/uploader.php on line 154

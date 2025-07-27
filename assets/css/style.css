@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'Chuckle-Charm';
+  src: url('../fonts/Chuckle-Charm.otf')format(truetype);
+}
+*{
+  font-family: 'Chuckle-Charm';
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.navbar {
+  background: #ffb6c1; /* Warna pink lembut */
+}
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+}
+.navbar-nav .nav-link {
+  transition: all 0.3s ease-in-out;
+  /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+}
+
+.dropdown-item .dropdown-menu {
+	border: 1px solid black;
+	font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+
+.navbar-nav .nav-link:hover {
+  background-color: #f8f9fa;
+  color: #d63384;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/*body, html {
+    height: 100%;
+}*/
+
+
+
+
