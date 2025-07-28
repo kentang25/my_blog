@@ -1,8 +1,4 @@
 <div class="container">
-
-	
-
-
 	<?= form_open_multipart('adminBlog/dashboard_blog/insert') ?> 
 
 		<label>About Blog</label>

@@ -57,3 +57,7 @@ $route['translate_uri_dashes'] = FALSE;
 // --- admin-blog ---
 $route['admin'] = 'adminBlog';
 $route['admin/dashboard-blog'] = 'adminBlog/dashboard_blog';
+$route['admin/about-blog'] = 'adminBlog/about';
+
+
+// 
