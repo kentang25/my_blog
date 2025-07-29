@@ -60,4 +60,6 @@ $route['admin/dashboard-blog'] = 'adminBlog/dashboard_blog';
 $route['admin/about-blog'] = 'adminBlog/about';
 
 
-// 
+// --- blog ---
+
+$route['about'] = 'my_blog/about';

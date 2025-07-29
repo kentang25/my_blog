@@ -17,6 +17,9 @@
         $gambar_user = '';
         $gambar_kegiatan = '';
 
+        // var_dump($_FILES['gambar_user']);
+        // exit();
+
         if(!empty($_FILES['gambar_user']['name'])){
             $config['upload_path']      = FCPATH. 'assets/uploads/';
             $config['allowed_types']    = 'jpg|jpeg|png|webp';
