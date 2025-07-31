@@ -1,9 +1,9 @@
-@font-face {
+/* @font-face {
   font-family: 'Chuckle-Charm';
   src: url('../fonts/Chuckle-Charm.otf')format(truetype);
-}
+} */
 *{
-  font-family: 'Chuckle-Charm';
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .main {
@@ -17,13 +17,6 @@ body, html {
   margin: 0;
   padding: 0;
 }
-
-/*footer{
-  margin-top: 100px;
-  padding-top: 1rem;
-}*/
-
-
 
 .navbar {
   background: #ffb6c1; /* Warna pink lembut */
@@ -52,9 +45,15 @@ body, html {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/*body, html {
-    height: 100%;
-}*/
+/* --- about --- */
+
+#gambar_user{
+  width: 350px;
+  height: 450px;
+  float: left;
+  padding-right: 10px;
+  border-radius: 5px;
+}
 
 
 

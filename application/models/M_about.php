@@ -14,8 +14,10 @@
         $about_user = $this->input->post('about_user');
         $title_2    = $this->input->post('title_2');
         $about_kegiatan = $this->input->post('about_kegiatan');
+        $about_kegiatan_2 = $this->input->post('about_kegiatan_2');
         $gambar_user = '';
         $gambar_kegiatan = '';
+        $gambar_kegiatan_2 = '';
 
         // var_dump($_FILES['gambar_user']);
         // exit();
@@ -48,13 +50,29 @@
             }
         }
 
+        if(!empty($_FILES['gambar_kegiatan_2']['name'])){
+            $config['upload_path']      = FCPATH. 'assets/uploads/';
+            $config['allowed_types']    = 'jpg|jpeg|png|webp';
+
+            $this->load->library('upload',$config);
+
+            if(!$this->upload->do_upload('gambar_kegiatan_2')){
+                echo $this->upload->display_errors();
+                exit();
+            }else{
+                $gambar_kegiatan_2 = $this->upload->data('file_name');
+            }
+        }
+
         $data = array(
             'title'             => $title,
             'about_user'        => $about_user,
             'title_2'           => $title_2,
             'about_kegiatan'    => $about_kegiatan,
+            'about_kegiatan_2'    => $about_kegiatan_2,
             'gambar_user'       => $gambar_user,
-            'gambar_kegiatan'   => $gambar_kegiatan
+            'gambar_kegiatan'   => $gambar_kegiatan,
+            'gambar_kegiatan_2'   => $gambar_kegiatan_2
         );
 
         return $this->db->insert('tb_about', $data);

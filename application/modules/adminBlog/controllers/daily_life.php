@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class about extends BackendController {
+class daily_life extends BackendController {
 	//
     public $CI;
 
@@ -24,7 +24,7 @@ class about extends BackendController {
         // Normally, to call any of the available CodeIgniter object or pre defined library classes then you need to declare.
         $CI =& get_instance();
 
-        $this->load->model('M_about');
+        $this->load->model('M_daily_life');
         // $this->load->model('M_news');
         // $this->load->model('M_gallery');
     }
@@ -37,14 +37,14 @@ class about extends BackendController {
      * @return [type] [description]
      */
 	public function index() {
-        $this->data['dashboard'] = $this->M_about->tampil_data()->result();
-		$this->template_admin('v_admin_about', $this->data, true);
+        $this->data['daily_life'] = $this->M_daily_life->tampil_data()->result();
+		$this->template_admin('v_admin_daily_life', $this->data, true);
 	}
 
     public function insert()
     {
-        $this->M_about->insert_data();
-        redirect('admin/about-blog');
+        $this->M_daily_life->insert_data();
+        redirect('admin/blog/daily-life');
     }
 
 }
