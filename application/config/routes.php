@@ -66,3 +66,5 @@ $route['admin/blog/jalan-jalan'] = 'adminBlog/jalan_jalan';
 // --- blog ---
 
 $route['about'] = 'my_blog/about';
+$route['blog'] = 'my_blog/blog';
+$route['blog/(:any)'] = 'my_blog/blog/get_blog/$1';

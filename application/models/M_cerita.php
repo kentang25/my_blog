@@ -37,6 +37,14 @@
             return $this->db->insert('tb_cerita',$data);
         }
 
+        public function detail_blog($id)
+        {
+            $query = $this->db->get_where('tb_cerita', array('id_cerita'=>$id));
+            // var_dump($query);
+            // exit();
+            return $query;
+        }
+
     }
 
 ?>
