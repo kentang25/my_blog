@@ -232,3 +232,26 @@ function potong($teks) {
 
 	return $tekss;
 }
+
+if (!function_exists('character_limiter')) {
+    function character_limiter($str, $limit = 100, $end_char = '...')
+    {
+        if (trim($str) == '') return '';
+
+        if (strlen($str) <= $limit) return $str;
+
+        $str = strip_tags($str); // hilangkan tag HTML kalau ada
+
+        $out = substr($str, 0, $limit);
+
+        // Hindari terpotong di tengah kata
+        if (substr($str, $limit, 1) != ' ') {
+            $space_pos = strrpos($out, ' ');
+            if ($space_pos !== false) {
+                $out = substr($out, 0, $space_pos);
+            }
+        }
+
+        return rtrim($out) . $end_char;
+    }
+}

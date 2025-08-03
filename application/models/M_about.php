@@ -78,6 +78,33 @@
         return $this->db->insert('tb_about', $data);
 
         }
+
+        public function edit_data($table,$where)
+        {
+            $query = $this->db->get_where($table,$where);
+            return $query;
+        }
+
+        public function update_data()
+        {
+            $title      = $this->input->post('title');
+            $about_user = $this->input->post('about_user');
+            $title_2    = $this->input->post('title_2');
+            $about_kegiatan = $this->input->post('about_kegiatan');
+            $about_kegiatan_2 = $this->input->post('about_kegiatan_2');
+
+            $data = array(
+                'title'             => $title,
+                'about_user'        => $about_user,
+                'title_2'           => $title_2,
+                'about_kegiatan'    => $about_kegiatan,
+                'about_kegiatan_2'  => $about_kegiatan_2,
+            );
+
+            return $this->db->update('tb_about',$data);
+        }
+
+
     }
 
 

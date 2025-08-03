@@ -37,7 +37,10 @@ class about extends BackendController {
      * @return [type] [description]
      */
 	public function index() {
-        $this->data['dashboard'] = $this->M_about->tampil_data()->result();
+        $this->load->helper('my'); // atau autoload['helper'] = ['text']
+
+        $this->data['about'] = $this->M_about->tampil_data()->result();
+        
 		$this->template_admin('v_admin_about', $this->data, true);
 	}
 
@@ -46,5 +49,21 @@ class about extends BackendController {
         $this->M_about->insert_data();
         redirect('admin/about-blog');
     }
+
+    public function edit_about($id)
+    {
+        $where = array('id_about'=>$id);
+
+        $this->data['edit_about'] = $this->M_about->edit_data('tb_about',$where)->result();
+        $this->template_admin('v_edit_about', $this->data, true);
+    }
+
+    public function update()
+    {
+        $this->M_about->update_data();
+        redirect('admin/about-blog');
+    }
+
+
 
 }
