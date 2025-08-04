@@ -47,4 +47,18 @@ class cerita extends BackendController {
         redirect('admin/blog/cerita');
     }
 
+    public function edit_cerita($id)
+    {
+        $where = array('id_cerita'=>$id);
+
+        $this->data['cerita'] = $this->M_cerita->edit_data('tb_cerita',$where)->row();
+        $this->template_admin('v_edit_cerita',$this->data,true);
+    }
+
+    public function update()
+    {
+        $this->M_cerita->update_data();
+        redirect('admin/blog/cerita');
+    }
+
 }

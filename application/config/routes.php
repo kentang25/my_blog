@@ -59,6 +59,8 @@ $route['admin'] = 'adminBlog';
 $route['admin/dashboard-blog'] = 'adminBlog/dashboard_blog';
 $route['admin/about-blog'] = 'adminBlog/about';
 $route['admin/about-blog/edit/(:num)'] = 'adminBlog/about/edit_about/$1';
+$route['admin/about-blog/detail/(:num)'] = 'adminBlog/about/detail_about/$1';
+$route['admin/about-blog/delete/(:num)'] = 'adminBlog/about/delete_about/$1';
 
 $route['admin/blog/cerita'] = 'adminBlog/cerita';
 $route['admin/blog/daily-life'] = 'adminBlog/daily_life';

@@ -45,6 +45,26 @@
             return $query;
         }
 
+        public function edit_data($table,$where)
+        {
+            $query = $this->db->get_where($table,$where);
+            return $query;
+        }
+
+        public function update_data()
+        {
+            $title      = $this->input->post('title');
+            $cerita     = $this->input->post('cerita');
+
+                $data = array(
+                'title'     => $title,
+                'cerita'    => $cerita
+            );
+
+            return $this->db->update('tb_cerita',$data);
+
+        }
+
     }
 
 ?>

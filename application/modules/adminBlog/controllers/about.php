@@ -64,6 +64,17 @@ class about extends BackendController {
         redirect('admin/about-blog');
     }
 
+    public function detail_about($id)
+    {
+        $this->data['detail_about'] = $this->M_about->detail_data($id)->row();
+        $this->template_admin('v_detail_about',$this->data,true);
+    }
+
+    public function delete_about($id)
+    {
+        $this->M_about->detele_data($id);
+        redirect('admin/about-blog');
+    }
 
 
 }

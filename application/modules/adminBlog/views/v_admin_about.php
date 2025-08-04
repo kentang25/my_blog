@@ -25,7 +25,7 @@
     <label>About Kegiatan 2</label>
     <textarea class="ckeditor" name="about_kegiatan_2" id="about_blog"></textarea>
 
-    <button type="submit">Simpan</button>
+    <button type="submit" class="btn btn-primary mt-3">Simpan</button>
 
     <?= form_close() ?>
 
@@ -62,10 +62,10 @@
                     <a href="<?= base_url('admin/about-blog/edit/' . $abt->id_about) ?>" class="btn btn-sm btn-primary" title="Edit">
                         <i class="fa fa-edit"></i>
                     </a>
-                    <a href="<?= base_url('adminBlog/blog/detail/' . $abt->id_about) ?>" class="btn btn-sm btn-info" title="Detail">
+                    <a href="<?= base_url('admin/about-blog/detail/' . $abt->id_about) ?>" class="btn btn-sm btn-info" title="Detail">
                         <i class="fa fa-search"></i>
                     </a>
-                    <a href="<?= base_url('adminBlog/blog/delete/' . $abt->id_about) ?>" class="btn btn-sm btn-danger" title="Hapus" onclick="return confirm('Yakin ingin menghapus data ini?')">
+                    <a href="<?= base_url('admin/about-blog/delete/' . $abt->id_about) ?>" class="btn btn-sm btn-danger" title="Hapus" onclick="return confirm('Yakin ingin menghapus data ini?')">
                         <i class="fa fa-trash"></i>
                     </a>
                 </td>

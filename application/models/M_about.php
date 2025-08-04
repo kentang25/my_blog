@@ -104,6 +104,18 @@
             return $this->db->update('tb_about',$data);
         }
 
+        public function detail_data($id)
+        {
+            $query = $this->db->get_where('tb_about',array('id_about'=>$id));
+            return $query;
+        }
+
+        public function detele_data($id)
+        {
+            $query = $this->db->delete('tb_about', array('id_about'=>$id));
+            return $query;
+        }
+
 
     }
 
