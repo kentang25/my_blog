@@ -85,7 +85,7 @@
             return $query;
         }
 
-        public function update_data()
+        public function update_data($id)
         {
             $title      = $this->input->post('title');
             $about_user = $this->input->post('about_user');
@@ -101,6 +101,7 @@
                 'about_kegiatan_2'  => $about_kegiatan_2,
             );
 
+            $this->db->where('id_about',$id);
             return $this->db->update('tb_about',$data);
         }
 

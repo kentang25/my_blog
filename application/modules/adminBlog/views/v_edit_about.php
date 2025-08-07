@@ -1,7 +1,7 @@
 <div class="container">
-    <?= form_open_multipart('adminBlog/about/update') ?>
-
     <?php foreach($edit_about as $key => $edt) : ?>
+    
+    <?= form_open_multipart('adminBlog/about/update/'. $edt->id_about) ?>
 
     <label>Title</label>
     <input type="text" name="title" class="form-control" placeholder="Title" value="<?= $edt->title ?>">
@@ -29,7 +29,8 @@
 
     <button type="submit">Simpan</button>
 
+    <?= form_close() ?>
     <?php endforeach ?>
 
-    <?= form_close() ?>
+    
 </div>

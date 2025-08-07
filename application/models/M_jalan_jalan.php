@@ -37,6 +37,38 @@
                 return $this->db->insert('tb_jalan_jalan',$data);
         }
 
+        public function edit_data($table,$where)
+        {
+            $query = $this->db->get_where($table,$where);
+            return $query;
+        }
+
+        public function update_data($id)
+        {
+            $title      = $this->input->post('title');
+            $ceritanya  = $this->input->post('ceritanya');
+
+                $data = array(
+                    'title'     => $title,
+                    'ceritanya' => $ceritanya,
+                );
+
+            $this->db->where('id_jalan',$id);
+            return $this->db->update('tb_jalan_jalan',$data);
+        }
+
+        public function detail_data($id)
+        {
+            $query = $this->db->get_where('tb_jalan_jalan', array('id_jalan'=> $id));
+            return $query;
+        }
+
+        public function delete_data($id)
+        {
+            $query = $this->db->delete('tb_jalan_jalan', array('id_jalan'=>$id));
+            return $query;
+        }
+
     }
 
 ?>

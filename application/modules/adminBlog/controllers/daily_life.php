@@ -47,4 +47,30 @@ class daily_life extends BackendController {
         redirect('admin/blog/daily-life');
     }
 
+    public function edit_daily_life($id)
+    {
+        $where = array('id_daily_life' => $id);
+
+        $this->data['edit_daily_life'] = $this->M_daily_life->edit_data('tb_daily_life',$where)->result();
+        $this->template_admin('v_edit_daily',$this->data,true);
+    }
+
+    public function update($id)
+    {
+        $this->M_daily_life->update_data($id);
+        redirect('admin/blog/daily-life');
+    }
+
+    public function detail_daily_life($id)
+    {
+        $this->data['detail_daily_life'] = $this->M_daily_life->detail_data($id)->row();
+        $this->template_admin('v_detail_daily',$this->data,true);
+    }
+
+    public function delete_daily_life($id)
+    {
+        $this->M_daily_life->delete_data($id);
+         redirect('admin/blog/daily-life');
+    }
+
 }

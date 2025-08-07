@@ -57,15 +57,36 @@ $route['translate_uri_dashes'] = FALSE;
 // --- admin-blog ---
 $route['admin'] = 'adminBlog';
 $route['admin/dashboard-blog'] = 'adminBlog/dashboard_blog';
+
+// --- about-blog ---
 $route['admin/about-blog'] = 'adminBlog/about';
 $route['admin/about-blog/edit/(:num)'] = 'adminBlog/about/edit_about/$1';
 $route['admin/about-blog/detail/(:num)'] = 'adminBlog/about/detail_about/$1';
 $route['admin/about-blog/delete/(:num)'] = 'adminBlog/about/delete_about/$1';
 
-$route['admin/blog/cerita'] = 'adminBlog/cerita';
-$route['admin/blog/daily-life'] = 'adminBlog/daily_life';
-$route['admin/blog/jalan-jalan'] = 'adminBlog/jalan_jalan';
+// --- end ---
 
+
+// --- cerita-blog ---
+$route['admin/blog/cerita'] = 'adminBlog/cerita';
+$route['admin/blog/cerita/edit/(:num)'] = 'adminBlog/cerita/edit_cerita/$1';
+$route['admin/blog/cerita/detail/(:num)'] = 'adminBlog/cerita/detail_cerita/$1';
+$route['admin/blog/cerita/delete/(:num)'] = 'adminBlog/cerita/delete_cerita/$1';
+// --- end ---
+
+// --- daily life ---
+$route['admin/blog/daily-life'] = 'adminBlog/daily_life';
+$route['admin/blog/daily-life/edit/(:num)'] = 'adminBlog/daily_life/edit_daily_life/$1';
+$route['admin/blog/daily-life/detail/(:num)'] = 'adminBlog/daily_life/detail_daily_life/$1';
+$route['admin/blog/daily-life/delete/(:num)'] = 'adminBlog/daily_life/delete_daily_life/$1';
+// --- end ---
+
+// --- jalan jalan ----
+$route['admin/blog/jalan-jalan'] = 'adminBlog/jalan_jalan';
+$route['admin/blog/jalan-jalan/edit/(:num)'] = 'adminBlog/jalan_jalan/edit_jalan_jalan/$1';
+$route['admin/blog/jalan-jalan/detail/(:num)'] = 'adminBlog/jalan_jalan/detail_jalan_jalan/$1';
+$route['admin/blog/jalan-jalan/delete/(:num)'] = 'adminBlog/jalan_jalan/delete_jalan_jalan/$1';
+// --- end ---
 
 // --- blog ---
 

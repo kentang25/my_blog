@@ -47,4 +47,30 @@ class jalan_jalan extends BackendController {
         redirect('admin/blog/jalan-jalan');
     }
 
+    public function edit_jalan_jalan($id)
+    {
+        $where = array('id_jalan'=>$id);
+
+        $this->data['edit_jalan'] = $this->M_jalan_jalan->edit_data('tb_jalan_jalan', $where)->result();
+        $this->template_admin('v_edit_jalan',$this->data,true);
+    }
+
+    public function update($id)
+    {
+        $query = $this->M_jalan_jalan->update_data($id);
+        redirect('admin/blog/jalan-jalan');
+    }
+
+    public function detail_jalan_jalan($id)
+    {
+        $this->data['detail_jalan'] = $this->M_jalan_jalan->detail_data($id)->row();
+        $this->template_admin('v_detail_jalan',$this->data,true);
+    }
+
+    public function delete_jalan_jalan($id)
+    {
+        $this->M_jalan_jalan->delete_data($id);
+         redirect('admin/blog/jalan-jalan');
+    }
+
 }

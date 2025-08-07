@@ -51,7 +51,7 @@
             return $query;
         }
 
-        public function update_data()
+        public function update_data($id)
         {
             $title      = $this->input->post('title');
             $cerita     = $this->input->post('cerita');
@@ -60,9 +60,22 @@
                 'title'     => $title,
                 'cerita'    => $cerita
             );
-
+            
+            $this->db->where('id_cerita',$id);
             return $this->db->update('tb_cerita',$data);
 
+        }
+
+        public function detail_data($id)
+        {
+            $query = $this->db->get_where('tb_cerita', array('id_cerita'=>$id));
+            return $query;
+        }
+
+        public function delete_data($id)
+        {
+            $query = $this->db->delete('tb_cerita', array('id_cerita'=>$id));
+            return $query;
         }
 
     }

@@ -35,6 +35,38 @@
 
                 return $this->db->insert('tb_daily_life',$data);
         }
+
+        public function edit_data($table,$where)
+        {
+            $query = $this->db->get_where($table,$where);
+            return $query;
+        }
+
+        public function update_data($id)
+        {
+            $title          = $this->input->post('title');
+            $dailay_life    = $this->input->post('daily_life');
+
+                $data = array(
+                    'title'         => $title,
+                    'daily_life'    => $dailay_life
+                );
+            
+            $this->db->where('id_daily_life',$id);
+            return $this->db->update('tb_daily_life',$data);
+        }
+
+        public function detail_data($id)
+        {
+            $query = $this->db->get_where('tb_daily_life',array('id_daily_life' => $id));
+            return $query;
+        }
+
+        public function delete_data($id)
+        {
+            $query = $this->db->delete('tb_daily_life', array('id_daily_life'=>$id));
+            return $query;
+        }
         
 
     }

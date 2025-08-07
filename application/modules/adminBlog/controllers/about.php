@@ -58,9 +58,9 @@ class about extends BackendController {
         $this->template_admin('v_edit_about', $this->data, true);
     }
 
-    public function update()
+    public function update($id)
     {
-        $this->M_about->update_data();
+        $this->M_about->update_data($id);
         redirect('admin/about-blog');
     }
 

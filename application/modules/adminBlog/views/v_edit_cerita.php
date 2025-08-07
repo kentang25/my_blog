@@ -1,7 +1,6 @@
 <div class="container">
-    <?= form_open_multipart('adminBlog/cerita/update') ?>
-
         <?php foreach($edit_cerita as $key => $crt) : ?>
+        <?= form_open_multipart('adminBlog/cerita/update/'. $crt->id_cerita) ?>
 
         <div class="form-group">
             <label>Title</label>
@@ -19,7 +18,7 @@
         </div>
 
         <button type="submit">Simpan</button>
-
+        
+        <?= form_close(); ?>
         <?php endforeach ?>
-    <?= form_close(); ?>
 </div>
