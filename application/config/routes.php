@@ -88,6 +88,9 @@ $route['admin/blog/jalan-jalan/detail/(:num)'] = 'adminBlog/jalan_jalan/detail_j
 $route['admin/blog/jalan-jalan/delete/(:num)'] = 'adminBlog/jalan_jalan/delete_jalan_jalan/$1';
 // --- end ---
 
+// --- books ---
+$route['admin/books'] = 'adminBlog/books';
+
 // --- blog ---
 
 $route['about'] = 'my_blog/about';
