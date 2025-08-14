@@ -47,4 +47,30 @@ class books extends BackendController {
         redirect('admin/books');
     }
 
+    public function edit_books($id)
+    {
+        $where = array('id_book' => $id);
+
+        $this->data['edit_book'] = $this->M_books->edit_data('tb_books',$where)->result();
+        $this->template_admin('v_edit_book',$this->data,true);
+    }
+
+    public function update($id)
+    {
+        $this->M_books->update_data($id);
+        redirect('admin/books');
+    }
+
+    public function detail_books($id)
+    {
+        $this->data['detail_books'] = $this->M_books->detail_data($id)->row();
+        $this->template_admin('v_detail_book',$this->data,true);
+    }
+
+    public function delete_books($id)
+    {
+        $this->M_books->delete_data($id);
+        redirect('admin/books');
+    }
+
 }

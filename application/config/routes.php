@@ -90,6 +90,10 @@ $route['admin/blog/jalan-jalan/delete/(:num)'] = 'adminBlog/jalan_jalan/delete_j
 
 // --- books ---
 $route['admin/books'] = 'adminBlog/books';
+$route['admin/books/edit/(:num)'] = 'adminBlog/books/edit_books/$1';
+$route['admin/books/detail/(:num)'] = 'adminBlog/books/detail_books/$1';
+$route['admin/books/delete/(:num)'] = 'adminBlog/books/delete_books/$1';
+// --- end books ---
 
 // --- blog ---
 

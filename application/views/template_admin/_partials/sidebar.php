@@ -52,13 +52,13 @@
 
 
     <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('admin/data-transaksi') ?>">
+        <a class="nav-link" href="<?= base_url('admin/books') ?>">
             <i class="fa-solid fa-book"></i>
             <span>Books</span></a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('admin/data-transaksi') ?>">
+        <a class="nav-link" href="<?= base_url('admin/kontak') ?>">
             <i class="fa-solid fa-address-card"></i>
             <span>Kontak</span></a>
     </li>
