@@ -99,4 +99,6 @@ $route['admin/books/delete/(:num)'] = 'adminBlog/books/delete_books/$1';
 
 $route['about'] = 'my_blog/about';
 $route['blog'] = 'my_blog/blog';
+$route['books'] = 'my_blog/books';
+$route['books/(:any)'] = 'my_blog/books/detail/$1';
 $route['blog/(:any)'] = 'my_blog/blog/get_blog/$1';
