@@ -95,6 +95,9 @@ $route['admin/books/detail/(:num)'] = 'adminBlog/books/detail_books/$1';
 $route['admin/books/delete/(:num)'] = 'adminBlog/books/delete_books/$1';
 // --- end books ---
 
+// --- kontak ---
+$route['admin/kontak'] = 'adminBlog/kontak';
+
 // --- blog ---
 
 $route['about'] = 'my_blog/about';
