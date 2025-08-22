@@ -34,8 +34,8 @@
                     <input type="file" class="form-control" name="gambar">
                 </div> -->
                 <div class="mb-3">
-                    <label class="form-label">Ulasan</label>
-                    <textarea class="ckeditor" name="ulasan"><?= $e_bks->ulasan ?></textarea>
+                        <label class="form-label">Ulasan</label>
+                        <textarea class="ckeditor" name="ulasan"><?= $e_bks->ulasan ?></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-success">

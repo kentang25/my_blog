@@ -47,4 +47,30 @@ class kontak extends BackendController {
         redirect('admin/kontak');
     }
 
+    public function edit_kontak($id)
+    {
+        $where = array('id_kontak' => $id);
+
+        $this->data['edit_kontak'] = $this->M_kontak->edit_data('tb_kontak',$where)->result();
+        $this->template_admin('v_edit_kontak',$this->data,true);
+    }
+
+    public function update($id)
+    {
+        $this->M_kontak->update_data($id);
+        redirect('admin/kontak');
+    }
+
+    public function detail_kontak($id)
+    {
+        $this->data['detail_kontak'] = $this->M_kontak->detail_data($id)->row();
+        $this->template_admin('v_detail_kontak',$this->data,true);
+    }
+
+    public function delete_kontak($id)
+    {
+        $this->M_kontak->delete_data($id);
+        redirect('admin/kontak');
+    }
+
 }

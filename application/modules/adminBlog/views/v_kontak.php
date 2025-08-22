@@ -69,7 +69,17 @@
                             <td><?= $ktk->instagram ?></td>
                             <td><?= $ktk->facebook ?></td>
                             <td><?= $ktk->email ?></td>
-                            <td></td>
+                            <td class="text-center">
+                                <a href="<?= base_url('admin/kontak/edit/' . $ktk->id_kontak) ?>" class="btn btn-sm btn-primary mb-1" title="Edit">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                                <a href="<?= base_url('admin/kontak/detail/' . $ktk->id_kontak) ?>" class="btn btn-sm btn-info mb-1" title="Detail">
+                                    <i class="fa fa-search"></i>
+                                </a>
+                                <a href="<?= base_url('admin/kontak/delete/' . $ktk->id_kontak) ?>" class="btn btn-sm btn-danger mb-1" title="Hapus" onclick="return confirm('Yakin ingin menghapus data ini?')">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                            </td>
                         </tr>
                     </tbody>
                     <?php endforeach; ?>

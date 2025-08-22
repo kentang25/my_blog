@@ -43,6 +43,44 @@
             return $this->db->insert('tb_kontak',$data);
         }
 
+        public function edit_data($table,$where)
+        {
+            $query = $this->db->get_where($table,$where);
+            return $query;
+        }
+
+        public function update_data($id)
+        {
+            $title      = $this->input->post('title');
+            $kalimat    = $this->input->post('kalimat');
+            $instagram  = $this->input->post('instagram');
+            $facebook   = $this->input->post('facebook');
+            $email      = $this->input->post('email');
+
+                $data = array(
+                'title'     => $title,
+                'kalimat'   => $kalimat,
+                'instagram' => $instagram,
+                'facebook'  => $facebook,
+                'email'     => $email
+            );
+
+            $this->db->where('id_kontak',$id);
+            return $this->db->update('tb_kontak',$data);
+        }
+
+        public function detail_data($id)
+        {
+            $query = $this->db->get_where('tb_kontak', array('id_kontak'=>$id));
+            return $query;
+        }
+
+        public function delete_data($id)
+        {
+            $query = $this->db->delete('tb_kontak', array('id_kontak'=>$id));
+            return $query;
+        }
+
     }
 
 ?>
