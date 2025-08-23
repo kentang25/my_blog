@@ -107,5 +107,6 @@ $route['admin/kontak/delete/(:num)'] = 'adminBlog/kontak/delete_kontak/$1';
 $route['about'] = 'my_blog/about';
 $route['blog'] = 'my_blog/blog';
 $route['books'] = 'my_blog/books';
+$route['kontak'] = 'my_blog/kontak';
 $route['books/(:any)'] = 'my_blog/books/detail/$1';
 $route['blog/(:any)'] = 'my_blog/blog/get_blog/$1';
