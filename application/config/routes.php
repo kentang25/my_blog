@@ -53,9 +53,15 @@ $route['default_controller'] = 'my_blog';
 $route['404_override'] = 'notfound';
 $route['translate_uri_dashes'] = FALSE;
 
+// --- auth admin ---
+$route['admin/register'] = 'adminBlog/auth/auth_admin/register';
+$route['admin/login'] = 'adminBlog/auth/auth_admin/login';
+$route['admin/logout'] = 'adminBlog/auth/auth_admin/logout';
+
 
 // --- admin-blog ---
-$route['admin'] = 'adminBlog';
+// $route['admin'] = 'adminBlog';
+$route['admin'] = 'adminBlog/dashboard_blog';
 $route['admin/dashboard-blog'] = 'adminBlog/dashboard_blog';
 
 // --- about-blog ---

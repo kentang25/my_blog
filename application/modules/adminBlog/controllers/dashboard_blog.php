@@ -25,7 +25,7 @@ class dashboard_blog extends BackendController {
         $CI =& get_instance();
 
         $this->load->model('M_dashboard_blog');
-        // $this->load->model('M_news');
+        $this->load->model('M_auth');
         // $this->load->model('M_gallery');
     }
 
@@ -37,6 +37,10 @@ class dashboard_blog extends BackendController {
      * @return [type] [description]
      */
 	public function index() {
+        if(!$this->M_auth->is_loggin()){
+            redirect(base_url('admin/login'));
+        }
+
         $this->data['dashboard'] = $this->M_dashboard_blog->tampil_data()->result();
 		$this->template_admin('v_admin_blog', $this->data, true);
 	}

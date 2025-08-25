@@ -23,7 +23,7 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('admin/data-cart') ?>">
+        <a class="nav-link" href="<?= base_url('admin/dashboard-blog') ?>">
              <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard-blog</span></a>
     </li>

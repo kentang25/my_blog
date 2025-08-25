@@ -41,7 +41,7 @@ class auth_admin extends BackendController {
         $this->form_validation->set_rules('password','Password','required|trim');
 
             if($this->form_validation->run() === False){
-                $this->template_login('auth/v_register',$this->data,true);
+                $this->template_login('auth_admin/v_auth_admin',$this->data,true);
             }else{
                 $data = $this->M_auth->insert_data();
 
@@ -49,9 +49,43 @@ class auth_admin extends BackendController {
             }
 	}
 
-    // public function login()
-    // {
+    public function login()
+    {
+        if($this->M_auth->is_loggin()){
+            redirect(base_url('admin'));
+        }
 
-    // }
+        $this->form_validation->set_rules('username','Username','required');
+        $this->form_validation->set_rules('password','Password','required');
+
+            if($this->form_validation->run() === FALSE)
+            {
+                $this->template_login('auth_admin/v_auth_admin',$this->data,true);
+            }else{
+                $username = $this->input->post('username');
+                $password = $this->input->post('password');
+
+                    $data = $this->M_auth->get_data($username,$password);
+
+                    if($data === FALSE){
+                        $this->session->set_flashdata('pesan','<div class="alert alert-warning alert-dismissible fade-show" role="alert">
+                                Username atau Password anda salah!
+                                
+                            </div>');
+                        redirect('login');
+                    }else{
+                        $this->session->set_userdata('id_admin',$data['id_admin']);
+                        $this->session->set_userdata('is_loggedin',TRUE);
+
+                        redirect(base_url('admin'));
+                    }
+            }
+    }
+
+    public function logout()
+    {
+        $this->session->sess_destroy();
+        redirect('admin/login');
+    }
 
 }
